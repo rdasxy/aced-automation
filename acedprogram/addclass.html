@@ -1,0 +1,74 @@
+<html>
+	<head>
+    	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" x-undefined="" />
+		<title>Add A Class</title>
+        <link rel="icon" type="image/png" href="images/favicon.png" />
+		<link href="resources/acedautomationstyle.css" rel="stylesheet" type="text/css" />
+	</head>
+	<body>
+		<div class = "selectclass">
+			<p><h1>Add Class</h1>
+            <font color="red">Please do this carefully. You can't edit the class once it's been added.</font>
+		</div>
+		<form action="/addClass" method = "POST">
+			<table border="0" width="300">
+				<tr>
+					<td>Class Name : </td>
+					<td><input type="text" name="className" /></td>
+				</tr>
+				<tr>
+					<td>Instructor(s) : </td>
+					<td><input type="text" name="teacher" /></td>
+				</tr>
+				<tr>
+					<td>Teacher Aide(s) : </td>
+					<td><input type="text" name="tA" /></td>
+				</tr>
+				<tr>
+					<td>Student limit: </td>
+					<td><input type="text" name="studentLimit" /></td>
+				</tr>
+				<tr>
+					<td>Class Fees: </td>
+					<td><input type="text" name="classFees" /></td>
+				</tr>
+				<tr>
+					<td>
+						Time Slot :
+					</td>
+					<td>
+						<select name="timeslot">
+							<option value="1">1 - 9:00a.m. - 10:00a.m.</option>
+							<option value="2">2 - 10:10a.m. - 11:10a.m.</option>
+							<option value="2">3 - 11:20a.m. - 12:35p.m.</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>Semester :</td>
+					<td>
+						<select name="semester">
+                            {% for semester in semesters %}
+							    <option value="{{semester.0}}">{{semester.1}}</option>
+                            {% endfor %}
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Campuses :
+					</td>
+					<td>
+						<input type="checkbox" name="BR" /> BR
+
+						<input type="checkbox" name="LV" /> LV
+
+						<input type="checkbox" name="UMKC" /> UMKC
+					</td>
+				</tr>
+			</table>
+			<input type="submit" value="Submit" style="height: 25px; width: 100px" />
+		</form>
+		
+	</body>
+</html> 

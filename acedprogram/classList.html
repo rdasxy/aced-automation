@@ -1,0 +1,77 @@
+<html>
+	<head>
+		<title>ACEDAutomation</title>
+        <link rel="stylesheet" type="text/css" href="resources/acedautomationstyle.css" />
+        <link rel="icon" type="image/png" href="images/favicon.png" />
+        <style type="text/css">
+        table.sample {
+            border:thin;
+            border-width: 1px;
+            border-spacing: 0px;
+            border-style: ridge;
+            border-color: gray;
+            border-collapse: separate;
+            background-color: white;
+        }
+        table.sample th {
+            border-width: 1px;
+            padding: 3px;
+            border-style: dotted;
+            border-color: gray;
+            background-color: white;
+            -moz-border-radius: ;
+        }
+        table.sample td {
+            border-width: 1px;
+            padding: 3px;
+            border-style: dotted;
+            border-color: gray;
+            background-color: rgb(255, 255, 240);
+            -moz-border-radius: ;
+        }
+        </style>
+	</head>
+	<body >
+	
+			<h2 align="center">Class List</h2>
+
+			<table align="center" border="1" width="40%" cellspacing="0" cellpadding="7" class="sample">
+				<tr>
+					<th  align="center" >&nbsp;
+						<b>Class Name</b>
+					</th>
+					<th  align="center" >&nbsp;
+						<b>Time Slot</b>
+					</th>
+					<th  align="center" >&nbsp;</th>
+
+				</tr>
+                {% for classData in classListData %}
+				<tr>
+					<td  align="center" >
+						&nbsp;{{classData.0}}
+					</td>
+					<td  align="center" >
+						&nbsp;{{classData.1}}
+					</td>
+					<td  align="center" >
+						&nbsp;<a href="/classRoster?ID={{classData.2}}">Class Roster</a>
+					</td>
+
+				</tr>
+                {% endfor %}
+				
+
+
+			</table>
+			
+
+
+
+
+
+
+
+		
+	</body>
+</html> 

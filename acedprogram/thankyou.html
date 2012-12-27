@@ -1,0 +1,58 @@
+<html>
+	<head>
+		<title>
+            {% if valid %}
+		    Thank you!
+            {% else %}
+            Sorry!
+            {% endif %}
+		</title>
+        <link rel="icon" type="image/png" href="images/favicon.png" />
+	</head>
+	<body >
+		<form action="/thankyou" method = "POST">
+			
+			
+			<!-- if statement here-->
+			{% if valid %}
+			<table background="images/thankyou.jpg "align="center" height="600" width="800" border="0">
+				<tr>
+					<td>
+						
+						<table border = "0" align height="100" width="300">
+							<tr>
+								<td>
+								<font color="#513003" align="left" ><h1> Thank you...</h1> </font>
+
+								<font color="#f48c1d" align="center" ><h1> {{name}}</h1>
+							</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				
+			</table>
+			{% else %}
+			<table background="images/thankyou.jpg "align="center" height="600" width="800" border="0">
+				<tr>
+					<td>
+						
+						<table border = "0" align height="100" width="600">
+							<tr>
+								<td>
+									<font color="#513003" align="left" ><h1> Invalid Registration!</h1> </font>
+                                    {% if message %}<font color="#513003" align="left" ><h1> {{message}}</h1> </font>{%endif%}
+									<font color="#f48c1d" align="left" ><h1> Please call the ACED office if you continue to have problems.</h1> </font>
+								</td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+				
+			</table>	
+			{% endif %}
+		</form>
+		
+
+	</body>
+</html> 

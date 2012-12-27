@@ -1,0 +1,439 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+
+<head>
+
+  <meta http-equiv="Content-Type"
+
+ content="text/html; charset=iso-8859-1">
+
+  <title>ACED Class Registration
+
+Form</title>
+
+  <style type="text/css">
+
+* { margin: 0px; padding: 0px; }
+
+body { font: 15px/20px "Myriad Pro", Arial, sans-serif; }
+
+h1 { color: #000066; }
+
+h2 { color: #990000; }
+
+h1, h2, h3, p { margin: 10px 0; }
+
+.wrap { width: 900px; margin: 35px; }
+
+form { border: 1px solid #EFEFEF; padding: 10px; }
+
+fieldset { border: 1px solid #8F8F8F; padding: 20px; margin: 0 0 10px 0; }
+
+legend { font-size: 18px; font-weight: bold; color: #5f5f5f; }
+
+form ul { list-style-type: none; }
+
+form ul li { line-height: 28px; margin: 0 0 6px 0; float: left; clear: left; width: 100%; }
+
+label { float: left; width: 160px; text-align: right; padding-right: 10px; }
+
+form ul li label.state { width: 24px; }
+
+form ul li label.zip { width: 14px; }
+
+input { border: 1px solid #8F90BF; height: 20px; line-height: 20px; padding: 4px 2px 0; margin-right: 6px; }
+
+input.radio { border: none; width: 10px; margin: 3px 0 0 0; }
+
+form ul li span { float: left; width: 70px; }
+
+form ul li input { float: left; }
+
+ul li .dropdown { padding: 3px; height: 24px; width: 250px; clear: left; }
+
+option { padding: 3px; height: 24px; }
+
+hr { margin: 20px 0; }
+
+table { border-collapse: collapse; }
+
+td { border: 1px solid #8F8F8F; padding: 4px; }
+
+td.select { background: #E0E0EF; text-align: center; }
+
+td.between { border-top: none; border-bottom: none; width: 6px; }
+
+.group { margin: 4px; padding: 10px; width: 230px; border: 1px solid #5f5f5f; float: left; }
+
+.clearfix { clear: both; }
+
+.submit { padding: 10px; font-size: 18px; height: 44px; }
+
+.reset { border: none; font-size: 12px; color: grey; font-variant: italic; }
+
+fieldset.complete { border: none; }
+
+  </style>
+
+<link rel="icon" type="image/png" href="images/favicon.png" />
+</head>
+
+<body>
+
+<div class="wrap">
+
+<form method="post" action="/register"><!--webbot bot="SaveResults" s-email-format="TEXT/PRE" s-email-address="seelbinderw@umkc.edu" b-email-label-fields="TRUE" s-builtin-fields startspan --><input
+
+ name="VTI-GROUP" value="0" type="hidden"><!--webbot bot="SaveResults" endspan i-checksum="43374" -->
+<input type="hidden" value="{{SemesterCode}}" name="SemesterCode"/>
+  <h1>ACED Class On-Line
+
+Registration Form</h1>
+
+  <h2>{{semester}}</h2>
+
+  <fieldset>
+
+  <legend>Contact
+
+Information</legend>
+
+  <ul>
+
+    <li><label>Name
+
+      </label><input name="Name" size="50" type="text"></li>
+
+    <li> <label>Phone
+
+Number </label> <input name="AreaCode" size="4" type="text"> <input
+
+ name="PhoneNumber" size="17" type="text">
+
+    </li>
+
+    <li><label>Address
+
+      </label><input name="Address" size="65" type="text"></li>
+
+    <li> <label>City
+
+      </label><input name="City" size="30" type="text"> <label
+
+ class="state">State </label><input name="State" size="3" type="text">
+
+      <label class="zip">Zip </label><input name="Zip" size="11"
+
+ type="text"> </li>
+
+    <li><label>Email
+
+      </label><input name="Email" type="text"></li>
+
+    <li><label>Have
+
+you attended ACED classes before? </label>
+
+      <span><input class="radio" name="AttendedACED" value="Yes"
+
+ type="radio"> Yes</span>
+
+      <span><input class="radio" name="AttendedACED" value="No"
+
+ type="radio"> No</span>
+
+    </li>
+
+    <li></li>
+
+    <li><label>Is
+
+this a new address? </label> <span><input class="radio"
+
+ name="NewAddress" value="Yes" type="radio"> Yes</span>
+
+      <span><input class="radio" name="NewAddress" value="No"
+
+ type="radio"> No</span>
+
+    </li>
+
+  </ul>
+
+  </fieldset>
+
+  <fieldset> <legend>Emergency
+
+Contact</legend>
+
+  <p><em>List
+
+a person to contact in case of an emergency during a Saturday morning
+
+class.</em></p>
+
+  <ul>
+
+    <li><label>Name
+
+      </label><input name="ContactName" size="50" type="text"></li>
+
+    <li><label>Relationship
+
+      </label><input name="ContactRelationship" size="50" type="text"></li>
+
+    <li> <label>Home
+
+Number</label> <input name="AreaCodeHome" size="4" type="text">
+
+      <input name="ContactHome" size="17" type="text"> </li>
+
+    <li> <label>Pager
+
+Number </label> <input name="AreaCodePager" size="4" type="text">
+
+      <input name="ContactPager" size="17" type="text"> </li>
+
+    <li> <label>Work
+
+Number </label> <input name="AreaCodeWork" size="4" type="text">
+
+      <input name="ContactWork" size="17" type="text"> </li>
+
+    <li> <label>Cell
+
+Number </label>
+
+      <input name="AreaCodeCell" size="4" type="text"><input
+
+ name="ContactCell" size="17" type="text"></li>
+
+    <li> <br>
+
+      <label>Any
+
+Special Instructions </label>
+
+      <input name="SpecialInstructions" size="70" type="text"></li>
+
+  </ul>
+
+  </fieldset>
+
+  <p><strong>If
+
+you are currently taking any medications
+
+or need special
+
+accommodations, please send that information to Wendy Seelbinder or
+
+Amanda Jeffries at the address below. Please print
+
+it out, fill it out and mail it. Thank you.</strong></p>
+
+  <hr>
+
+  <h2>How to register for classes</h2>
+
+  <h3>1. Select the Location where
+
+you want to take classes</h3>
+
+  <table>
+
+    <tbody>
+
+      <tr>
+
+        <td class="select" width="28">
+
+        <input name="campus" value="BR" type="radio"> </td>
+
+        <td width="197"> <strong>MCC-Blue
+
+River Campus</strong><br>
+
+20301 E. Hwy. 78<br>
+
+Independence, MO 64057<br>
+
+Ph.: (816) 604-6629 </td>
+
+        <td class="between"></td>
+
+        <td class="select" width="28">
+
+        <input name="campus" value="LV" type="radio"> </td>
+
+        <td width="197"> <strong>MCC-Longview
+
+Campus</strong><br>
+
+500 SW Longview Road<br>
+
+Lee's Summit, Missouri 64081<br>
+
+Ph.: (816) 604-2187 </td>
+
+        <td class="between"></td>
+
+        <td class="select" width="28">
+
+        <input name="campus" value="UMKC" type="radio"> </td>
+
+        <td width="197"> <strong>UMKC
+
+Campus</strong><br>
+
+800 E. 52nd Street<br>
+
+Kansas City, Missouri 64110<br>
+
+Ph.: (816) 235-1754 </td>
+
+      </tr>
+
+    </tbody>
+
+  </table>
+
+  <br>
+
+  <br>
+
+  <h3>2. Select the Classes You wish to take</h3>
+
+  <p>(The classes with an asterisk
+
+in the front are the only ones that are available at MCC-Blue River.)<br>
+
+All classes (with asterisks and without) are available at UMKC and
+
+MCC-Longview).</p>
+
+
+
+
+
+{% for class_list in class_list_overall %}
+	<fieldset> <legend>{{ class_list.1 }}</legend>
+
+		<ul>
+			<li> <label>First Choice </label>
+				<select class="dropdown" name="class{{forloop.counter}}1" size="1">
+					<option value="Click Here to Choose" selected="selected">Click Here to Choose</option>
+					{% for class in class_list.0 %}
+						<option>{{class}}</option>
+					{% endfor %}
+				</select>
+			</li>
+			<li> 
+				<label>Second Choice </label>
+				<select class="dropdown" name="class{{forloop.counter}}2" size="1">
+					<option value="Click Here to Choose" selected="selected">Click Here to Choose</option>
+					{% for class in class_list.0 %}
+						<option>{{class}}</option>
+					{% endfor %}
+				</select>
+			</li>
+		</ul>
+	</fieldset>
+		{% endfor %}
+	
+	
+  <h3>3.Mail in your Fees</h3>
+
+  <p>Fees are <strong>$6</strong>
+
+for <em>each</em>
+
+class.<br>
+
+Payment must accompany a registration form. If you are submitting this
+
+form on-line, then you need to mail your check with the correct amount
+
+to the corresponding representative.</p>
+
+  <div class="group">
+
+  <h4>MCC-Blue River Community
+
+Education</h4>
+
+  <p>{{brname}}, ACED Program<br>
+
+20301 E. Hwy. 78<br>
+
+Independence, MO 64057<br>
+
+Ph.: (816) 604-6629</p>
+
+  </div>
+
+  <div class="group">
+
+  <h4>MCC-Longview Community
+
+Education</h4>
+
+  <p>{{lvname}}, ACED Program<br>
+
+500 SW Longview Rd<br>
+
+Lee's Summit, MO 64081<br>
+
+Ph.: (816) 604-2187</p>
+
+  </div>
+
+  <div class="group">
+
+  <h4>UMKC Institute for Human
+
+Development</h4>
+
+  <p>{{umkcname}}, ACED Program<br>
+
+215 W. Pershing Rd. 6th Floor
+
+  <br>
+
+Kansas City, MO 64108<br>
+
+Ph.: (816) 235-1754</p>
+
+  </div>
+
+  <div class="clearfix"></div>
+
+  <p>All checks (whether for UMKC,
+
+MCC-Longview or MCC-Blue River) should be made payable to:</p>
+
+  <h4>UMKC Institute for Human
+
+Development</h4>
+
+  <p style="color: red;"><strong>DO
+
+NOT SEND CASH</strong></p>
+
+  <fieldset class="complete">
+
+  <input class="submit" value="Submit" name="S1" type="submit"> <input
+
+ class="reset" value="Reset" name="S2" type="reset"></fieldset>
+
+</form>
+
+</div>
+
+<!-- close wrap -->
+
+</body>
+
+</html>

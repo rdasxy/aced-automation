@@ -1,0 +1,198 @@
+<html>
+	<head>
+		<title>
+		ACEDAutomation
+		<link rel="stylesheet" type="text/css" href="resources/acedautomationstyle.css" />
+		</title>
+        <link rel="icon" type="image/png" href="images/favicon.png" />
+	</head>
+	<body >
+	
+			<h2>Student ID: {{studentid}} 	<b align="center">	<FORM>
+													<a href="/editStudentInformation?ID={{studentid}}"><INPUT TYPE="BUTTON" VALUE="Edit Student Information" style="height: 35px; width: 180px"></a>
+													</FORM></b></h2>
+
+			<table border="1" width="70%" cellspacing="0" cellpadding="7">
+				<tr>
+					<td width="25%" bgcolor="#d7ebe2">
+						<h4>Student Name</h4>
+					</td>
+					<td>
+						<h4>&nbsp;{{studentName}}</h4>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#d7ebe2">
+						Phone
+					</td>
+					<td>
+						&nbsp;{{phone}}
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#d7ebe2">
+						Address
+					</td>
+					<td>
+						&nbsp;{{address}}
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#d7ebe2">
+						City
+					</td>
+					<td>
+						&nbsp;{{city}}
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#d7ebe2">
+						State
+					</td>
+					<td>
+						&nbsp;{{state}}
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#d7ebe2">
+					Zip Code
+					</td>
+					<td>
+						&nbsp;{{zip}}
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#d7ebe2">
+						e-mail
+					</td>
+					<td>
+						&nbsp;{{email}}
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#d7ebe2">
+						New Student
+					</td>
+					<td>
+						&nbsp;{{newStudent}}
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#d7ebe2">
+						New Address
+					</td>
+					<td>
+						&nbsp;{{newAddress}}
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#d7ebe2">
+						Special Instructions
+					</td>
+					<td>
+						&nbsp;{{specialInstructions}}
+					</td>
+				</tr>
+
+
+			</table>
+    <hr>
+    <!--------- Second Table ------------------------>
+
+	  <table border="1" width="70%" cellspacing="0" cellpadding="7">
+				<tr>
+					<td colspan="2" bgcolor="#d7ebe2">
+						<h4><center>Emergency Contact</center></h4>
+                    </td>
+				</tr>
+				<tr>
+					<td bgcolor="#d7ebe2" width="25%">
+						Name
+					</td>
+					<td>
+						&nbsp;{{name}}
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#d7ebe2">
+						Relationship
+					</td>
+					<td>
+						&nbsp;{{relationship}}
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#d7ebe2">
+						Home Phone
+					</td>
+					<td>
+						&nbsp;{{homephone}}
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#d7ebe2">
+						Pager
+					</td>
+					<td>
+					&nbsp;{{pager}}
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#d7ebe2">
+						Work Phone
+					</td>
+					<td>
+						&nbsp;{{workphone}}
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#d7ebe2">
+						Cell phone
+					</td>
+					<td>
+						&nbsp;{{cellphone}}
+					</td>
+				</tr>
+			</table>
+			<hr>
+			<table border="1" width="70%" cellspacing="0" cellpadding="7">
+				<tr>
+					<td width="25%" bgcolor="#d7ebe2">
+						<h4>Classes For</h4>
+					</td>
+					<td>
+						<h4>&nbsp;{{semester}}, {{campuses}}</h4>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#d7ebe2">
+						First Preferences
+					</td>
+					<td>
+						&nbsp;{{firstpreferences}}
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#d7ebe2">
+						Second Preferences
+					</td>
+					<td>
+						&nbsp;{{secondpreferences}}
+					</td>
+				</tr>
+			</table><br/><hr>
+            <table border="1" width="70%" cellspacing="0" cellpadding="7">
+				<tr>
+					<td width="25%" bgcolor="#d7ebe2">
+						<h4>Internal Notes</h4>
+					</td>
+					<td>
+						&nbsp;{{notes}}
+					</td>
+				</tr>
+			</table><br/>
+    <a href="/editEnrollment?ID={{studentid}}"><INPUT TYPE="BUTTON" VALUE="Edit Classes/Campus" style="height: 25px; width: 200px"></a>
+
+		
+	</body>
+</html> 

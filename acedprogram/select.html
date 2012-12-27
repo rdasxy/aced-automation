@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>ACEDAutomation</title>
+        <link rel="stylesheet" type="text/css" href="resources/loginstyle.css" />
+        <link rel="icon" type="image/png" href="images/favicon.png" />
+    </head>
+	
+    <form action="/menuOptions" method="GET">
+    {% if campuses %}
+    <p><h2>Select Campus</h2></p>
+	<select name="campus">
+      {% for campus in campuses.items %}
+	  <option value="{{ campus.0 }}">{{ campus.1 }}</option>
+      {% endfor %}
+	</select>
+    {% else %}
+	<input type="hidden" value="{{ authenticatedcampus }}" name="authenticatedcampus"/>
+    {% endif %}
+	
+	<p><h2>Select Semester</h2></p>
+	<select name="semester">
+    {% for semester in semesters.items %}
+	  <option value="{{ semester.0 }}">{{ semester.1 }}</option>
+    {% endfor %}
+	</select>
+	
+	<input type="submit" value="Continue">
+	</form>
+	<p><a href="/logout">Log Out!</a></p>
+	</body>
+</html>

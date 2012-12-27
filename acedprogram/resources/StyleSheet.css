@@ -1,0 +1,39 @@
+﻿.specialTable {
+	border:thin;
+	border-style:solid;
+}
+.nameTagTable {
+	border:medium;
+	border-style:solid;
+}
+.nameTagTable-td-left {
+	border-right:medium;
+	border-right-style:solid;
+}
+.nameTagTable-td-right {
+	border-left:medium;
+	border-left-style:solid;
+}
+.nameTageTable-td-bottomBorder {
+	border-top:medium;
+	border-bottom:medium;
+	border-top-style:solid;
+	border-bottom-style:solid;
+}
+
+#contentHolders {
+	width:100%;
+	height:100%;
+}
+#nameText {
+	font-family:"Comic Sans MS", cursive;
+	font-size:26px;
+}
+#ACEDtext {
+	font-family:"Comic Sans MS", cursive;
+	font-size:18px;
+}
+#classText {
+	font-family:"Comic Sans MS", cursive;
+	font-size:15px;
+}

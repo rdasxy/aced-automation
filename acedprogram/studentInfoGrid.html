@@ -1,0 +1,100 @@
+<html>
+    <head>
+        <title>ACEDAutomation</title>
+        <link rel="stylesheet" type="text/css" href="resources/acedautomationstyle.css" />
+        <style type="text/css">
+        table.sample {
+            border-width: 1px;
+            border-spacing: 0px;
+            border-style: ridge;
+            border-color: gray;
+            border-collapse: separate;
+            background-color: white;
+        }
+        table.sample th {
+            border-width: 1px;
+            padding: 3px;
+            border-style: dotted;
+            border-color: gray;
+            background-color: white;
+            -moz-border-radius: ;
+        }
+        table.sample td {
+            border-width: 1px;
+            padding: 3px;
+            border-style: dotted;
+            border-color: gray;
+            background-color: rgb(255, 255, 240);
+            -moz-border-radius: ;
+        }
+        </style>
+        <link rel="icon" type="image/png" href="images/favicon.png" />
+    </head>
+	<body>
+	<INPUT TYPE="BUTTON" VALUE="Print View" ONCLICK="window.open('/studentInformationGrid');"> 
+    <br/>
+	<h1 align="center">ACED Student Information Grid</h1>
+	<h3 align="center">{{campus}} {{semester}}</h3>
+		<table border="1" align="center" class="sample">
+			<tr>
+				<th align="center" >
+					<b>Name</b>
+				</th>
+                <th align="center">
+                    <b>Address</b>
+                </th>
+                <th align="center">
+                    <b>Emergency Contact</b>
+                </th>
+				{% for classTimeSlot in classTimeSlots %}
+				<th align="center">
+					<b>{{classTimeSlot}}</b>
+				</th>
+                {% endfor %}
+                <th align="center">
+                    <b>Notes</b>
+                </th>
+                <th align="center">
+                    <b>Schedule</b>
+                </th>
+                <th align="center">
+                    <b>Delete</b>
+                </th>
+			</tr>
+
+
+			{% for studentData in studentData%}
+			<tr>
+				<td align="center" >
+					&nbsp;<a href="/studentInformation?ID={{studentData.0}}">{{studentData.1}}</a>
+                    <br/><font color="red">&nbsp;{{studentData.6}}</font>
+				</td>
+                <td align="center" >
+					&nbsp;{{studentData.4}}
+				</td>
+                <td align="center" >
+					&nbsp;{{studentData.5}}
+				</td>
+                {% for studentClass in studentData.2 %}
+				<td align="center">
+					&nbsp;{{ studentClass}}
+				</td>
+                {% endfor %}
+				<td align="center">
+					&nbsp;{{studentData.3}}
+				</td>
+				<td align="center">
+					<a href="/classSchedule?ID={{studentData.0}}">Class Schedule</a>
+				</td>
+				<td align="center">
+					<a href="/deniedStudents?delete={{studentData.0}}"><INPUT TYPE="submit" VALUE="Delete" style="height: 25px; width: 100px"></a>
+				</td>
+
+			</tr>
+			{% endfor %}
+
+		</table>
+
+	<div class="Footer">Click on the student names to see more information.</div>
+	</body>
+</html>

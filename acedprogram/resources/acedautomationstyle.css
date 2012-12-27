@@ -1,0 +1,51 @@
+html
+{
+    /*background-image: url(../images/mainBackground.jpg);*/
+    background-color:#e6e6e6;
+    background-repeat:repeat-x;
+}
+
+a:link {text-decoration:underline;color:blue;}
+a:visited {text-decoration:underline;color:blue;}
+a:hover {text-decoration:underline;color:blue;}
+a:active {text-decoration:underline;color:blue;}
+
+p
+{
+    font-family: times, serif;
+    font-size:16px;
+}
+
+p.center
+{
+    text-align:center;
+}
+
+input.textbox
+{
+    background-color : #99FFCC;
+    border: 1px solid #008000;
+    width: 75px;
+}
+
+a
+{
+    font-family:"Verdana", Geneva, sans-serif;
+    font-size:16px;
+}
+
+div.heading
+{
+    font-family: times, serif;
+    font-size:55px;
+    color:black;
+}
+
+div.footer
+{
+    position:fixed;
+    top:5px;
+    right:5px;
+
+    color:black;
+}

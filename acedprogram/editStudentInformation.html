@@ -1,0 +1,179 @@
+<html>
+	<head>
+		<title>ACEDAutomation</title>
+		<link rel="stylesheet" type="text/css" href="resources/acedautomationstyle.css" />
+        <link rel="icon" type="image/png" href="images/favicon.png" />
+	</head>
+	<body >
+	
+			<h2>Student ID: {{studentid}} 	</h2>
+			<FORM action="/editStudentInformation" method="POST">
+                <input type="hidden" value="{{studentid}}" name="studentID"/>
+			<table border="1" width="100%" cellspacing="0" cellpadding="7">
+				<tr>
+					<td bgcolor="#d7ebe2" width="28%">
+						<h4>Student Name</h4>
+					</td>
+					<td>
+						<input type="text" name="studentName" value="{{studentName}}"/>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#d7ebe2">
+						Phone
+					</td>
+					<td>
+						<input type="text" name="phone" value="{{phone}}"/>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#d7ebe2">
+						Address
+					</td>
+					<td>
+						<input type="text" name="address" value="{{address}}"/>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#d7ebe2">
+						City
+					</td>
+					<td>
+						<input type="text" name="city" value="{{city}}"/>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#d7ebe2">
+						State
+					</td>
+					<td>
+						<input type="text" name="state" value="{{state}}"/>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#d7ebe2">
+					Zip Code
+					</td>
+					<td>
+						<input type="text" name="zip" value="{{zip}}"/>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#d7ebe2">
+						e-mail
+					</td>
+					<td>
+						<input type="text" name="email" value="{{email}}"/>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#d7ebe2">
+						New Student
+					</td>
+					<td>
+						<input type="radio" name="newStudent" value="Yes" {% if newStudent %} checked {% endif %}> Yes
+						<input type="radio" name="newStudent" value="No" {% if not newStudent %} checked {% endif %}>No
+
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#d7ebe2">
+						New Address
+					</td>
+					<td>
+						<input type="radio" name="newAddress" value="Yes" {% if newAddress %} checked {% endif %}> Yes
+						<input type="radio" name="newAddress" value="No" {% if not newAddress %} checked {% endif %}>No
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#d7ebe2">
+						Special Instructions
+					</td>
+					<td>
+						<input type="text" name="specialInstructions" size="50" value="{{specialInstructions}}"/>
+					</td>
+				</tr>
+
+
+			</table>
+			
+			<hr>
+			
+<!--------- Second Table ------------------------>
+
+			<table border="1" width="100%" cellspacing="0" cellpadding="7">
+				<tr>
+					<td bgcolor="#d7ebe2" width="28%">
+						<h4>Emergency Contact Information</h4>
+					</td>
+                    <td>&nbsp;
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#d7ebe2">
+						Name
+					</td>
+					<td>
+						<input type="text" name="name" value="{{name}}"/>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#d7ebe2">
+						Relationship
+					</td>
+					<td>
+						<input type="text" name="relationship" value="{{relationship}}"/>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#d7ebe2">
+						Home Phone
+					</td>
+					<td>
+						<input type="text" name="homephone" value="{{homephone}}"/>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#d7ebe2">
+						Pager
+					</td>
+					<td>
+					<input type="text" name="pager" value="{{pager}}"/>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#d7ebe2">
+						Work Phone
+					</td>
+					<td>
+						<input type="text" name="workphone" value="{{workphone}}"/>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#d7ebe2">
+						Cell phone
+					</td>
+					<td>
+						<input type="text" name="cellphone" value="{{cellphone}}"/>
+					</td>
+				</tr>
+			</table><hr>
+            <table border="1" width="100%" cellspacing="0" cellpadding="7">
+				<tr>
+					<td bgcolor="#d7ebe2" width="28%">
+						<h4>Internal Notes</h4>
+					</td>
+                    <td>
+                        <input type="text" name="notes" value="{{notes}}" size="100"/>
+                    </td>
+				</tr>
+            </table>
+
+					<br>
+			<INPUT TYPE="SUBMIT" VALUE="Save" style="height: 25px; width: 130px">
+		</FORM>
+
+
+		
+	</body>
+</html> 

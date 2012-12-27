@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" x-undefined="" />
+	<link href="resources/StyleSheet.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+	<title>My Class Schedule</title>
+</head>
+<body>
+	<INPUT TYPE="BUTTON" VALUE="Print View" ONCLICK="window.open('/classSchedule?ID={{studentID}}');">
+	<div><center><b>
+		{{ campus }} - {{ semester }}<br />
+		ACED Student Class Schedule
+	</b></center></div><br />
+	<div>
+		<b><u>NAME</u>: {{studentName}}</b><br />
+		{{ classBeginData }}<br />
+		{{ classEndData }}<br />
+	</div><br /><br />
+	<div>
+		<b><center><table class="specialTable"border="0" cellspacing="0" cellpadding="15" width="60%">
+			<tr class="specialTable" style="background-color:#FFF380;">
+				<td class="specialTable" width="50%"><center>Class Time</center></td>
+				<td class="specialTable" width="50%"><center><b>Name of Class</b></center></td>
+			</tr>
+			{% for data in classScheduleData %}
+			<tr class="specialTable">
+				<td class="specialTable"><center>&nbsp;{{ data.1 }}</center></td>
+				<td class="specialTable"><center>&nbsp;{{ data.0 }}</center></td>
+				{% endfor %}
+		</table></center></b>
+	<div><br /><br />
+	<div>
+		<u>ARRIVAL</u>: {{arrivalNotes }}<br /><br />
+		<u>ATTENDENCE</u>: {{attendancePolicy }}<br /><br />
+		<u>LOCATION</u>: {{ location }}<br /><br />
+		<u>BUILDING</u>: {{ building }}<br /><br />
+		<u>DIRECTIONS</u>: {{ directions }}<br /><br />
+		{{problemNotice}}
+	</div>
+</body>
+</html>

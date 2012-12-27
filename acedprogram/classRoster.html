@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" x-undefined="" />
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+	<link href="resources/StyleSheet.css" rel="stylesheet" type="text/css" />
+    <style type="text/css">
+        table.sample {
+            border-width: 1px;
+            border-spacing: 0px;
+            border-style: ridge;
+            border-color: gray;
+            border-collapse: separate;
+            background-color: white;
+        }
+        table.sample th {
+            border-width: 1px;
+            padding: 3px;
+            border-style: dotted;
+            border-color: gray;
+            background-color: white;
+            -moz-border-radius: ;
+        }
+        table.sample td {
+            border-width: 1px;
+            padding: 3px;
+            border-style: dotted;
+            border-color: gray;
+            background-color: rgb(255, 255, 240);
+            -moz-border-radius: ;
+        }
+        </style>
+	<title>Class Roster for {{ className }} {{ semesterName }} </title>
+</head>
+<body>
+<INPUT TYPE="BUTTON" VALUE="Print View" ONCLICK="window.open('/classRoster?ID={{classID}}');">
+	<div align="center">
+		<b>ACED</b> Classes {{ semesterName }}<br />
+		{{ campus }} Session
+		<h1><b>ATTENDANCE ROSTER</b></h1>
+        <font color=red><h3>Please remember to save!</h3></font>
+	</div>
+	<div>
+		Class:		{{ className }}<br />
+		Instructor:	{{ classTeacher }}<br />
+		Teacher Aide:	{{ classTAs }}<br />
+		Time:		<b>{{ classTime }}</b>
+	</div>
+	<div>
+        <form action="/classRoster" method="POST">
+            <input type="hidden" name="classID" value="{{classID}}"/>
+            <center><input type=submit value="SAVE"/></center><br/>
+            <table class="sample" cellpadding="0" cellspacing="0" width="100%">
+                <tr>
+                    <th><b><center>No.</center></b></th>
+                    <th><b>Student</b></th>
+                    {% for classDay in classDaysList %}
+                    <th><b>{{classDay}}</b></th>
+                    {% endfor %}
+                </tr>
+                {% for attendanceData in attendanceByStudent.items %}
+                <tr>
+                    <td width="5%"><center>{{forloop.counter}}</center></td>
+                    <td>{{ attendanceData.0}}</td>
+                    {% for attendance in attendanceData.1 %}
+                    <td><center>{{attendance}}</center></td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </table>
+        </form>
+        <br/>
+        <center><input type=submit value="SAVE"/></center>
+	</div>
+</body>
+</html>

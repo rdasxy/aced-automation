@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>ACEDAutomation</title>
+        <link rel="stylesheet" type="text/css" href="resources/acedautomationstyle.css" />
+        <link rel="icon" type="image/png" href="images/favicon.png" />
+    </head>
+	
+	 <h2>{{campus}} {{semester}}</h2>
+	 <h2>Edit Classes for {{studentName}} (ID: {{studentID}})</h2>
+    <p>The student's second preferences were: <b>{{secondPreferences}}</b></p>
+    <form action="/editEnrollment" method="POST">
+	<table border="0">
+        <input type="hidden" name="studentID" value="{{studentID}}"/>
+        <input type="hidden" name="oldCampus" value="{{campus}}"/>
+        <input type="hidden" name="firstPreferences" value="{{firstPreferences}}"/>
+        <p><i>Current Campus:</i> <b>{{campus}}</b>. <i>Change campus to:</i> <select name="newCampus"><option value="No Change">No Change</option><option value="UMKC">UMKC</option>
+<option value="BR">Blue River</option>
+<option value="LV">MCC-Longview</option></select></p>
+        <p>Please choose <b>all</b> fields.
+		{% for class in class_list %}
+			<tr>
+				<td>			
+					<i>Current Class:</i> <b>{{class.0}}</b>
+				</td>
+				<td>
+					<i>New Class:</i> <select class="dropdown" name="class{{forloop.counter}}1" size="1">
+							<option selected="selected">No Change</option>
+                                <option>No class for this time</option>
+								{% for classItem in class.1 %}
+									<option>{{classItem}}</option>
+								{% endfor %}
+						</select> <i></i>
+				</td>
+		
+			</tr>
+			{% endfor %}
+
+		</table>
+		<input type="submit" value="SUBMIT">
+	</form>
+	
+	</body>
+</html>
+</html>

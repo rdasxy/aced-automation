@@ -1,0 +1,94 @@
+html
+{
+    background-image: url(../images/background.jpg);
+    background-repeat:repeat-x;
+}
+
+a:link {text-decoration:none;color:blue;}
+a:visited {text-decoration:none;color:purple;}
+a:hover {text-decoration:underline;color:black;}
+a:active {text-decoration:underline;color:red;}
+
+p
+{
+    font-family: times, serif;
+    font-size:45px;
+}
+
+p.blackops
+{
+    font-family:"Verdana", Geneva, sans-serif;
+    font-size:35px;
+}
+
+p.center
+{
+    text-align:center;
+}
+
+p.loginstuff
+{
+    font-family:"Verdana", Geneva, sans-serif;
+    font-size:22px;
+}
+
+input.textbox
+{
+    background-color : #99FFCC;
+    border: 1px solid #008000;
+    width: 75px;
+}
+
+a
+{
+    font-family:"Verdana", Geneva, sans-serif;
+    font-size:23px;
+}
+
+div.banner
+{
+    position:relative;
+    width:480px;
+    top:25px;
+    left:65px;
+}
+
+div.blackops
+{
+    width:480px;
+    padding:10px;
+    margin:0px;
+    position:relative;
+    top:25px;
+    left:160px;
+    font-style:italic;
+}
+
+div.loginstuff
+{
+    color:white;
+    width:550px;
+    padding:10px;
+    margin:0px;
+    position:fixed;
+    top:25px;
+    right:25px;
+    background-image:url('../images/watermelons.png');
+	background-repeat:no-repeat;
+	background-position:right;
+}
+
+div.heading
+{
+    font-family: times, serif;
+    font-size:55px;
+    color:white;
+}
+
+div.footer
+{
+    position:fixed;
+    bottom:15px;
+    
+    color:black;
+}

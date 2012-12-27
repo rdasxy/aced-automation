@@ -1,0 +1,281 @@
+<html>
+  <head>
+
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <!-- This Scrips code have been taking from three websites and modified
+http://www.goldcoastwebdesigns.com
+http://www.w3schools.com
+http://www.tek-tips.com
+-->
+    <script>
+      var toggledDisplay = new Object();
+    toggledDisplay['students'] = true;
+    toggledDisplay['staff'] = true;
+    toggledDisplay['administration'] = true;
+	toggledDisplay['sub4'] = true;
+
+function toggleDisplay(bDisplayed)
+{
+  if(!document.getElementById || toggleDisplay.arguments.length < 2) return;
+  var displayed = new Object();
+      displayed['true'] = 'block';
+      displayed['false'] = 'none';
+  for(var i = 1; i < toggleDisplay.arguments.length; i++)
+  {
+    oDisplay = document.getElementById(toggleDisplay.arguments[i]);
+    if(oDisplay)
+    {
+      oDisplay.style.display = displayed[bDisplayed];
+      if(bDisplayed)
+      {
+        oImages = oDisplay.getElementsByTagName('IMG');
+        for(var j = 0; j < oImages.length; j++)
+          oImages[j].src = oImages[j].src;
+      }
+      // end mozilla, err, crap browser hack
+       if(typeof toggledDisplay[toggleDisplay.arguments[i]] != 'undefined')
+        toggledDisplay[toggleDisplay.arguments[i]] = !bDisplayed;
+    }
+  }
+}
+
+</script>
+    <style type="text/css">
+<!--
+.centeralign {text-align:center}
+-->
+
+
+a:link {
+COLOR: #black	;
+}
+a:visited {
+COLOR: #blue;
+}
+a:hover {
+COLOR: #yellow;
+}
+a:active {
+COLOR: #blue;
+}
+
+h2 {
+    COLOR: white;
+}
+
+
+
+</style>
+    <style type="text/css">
+<!--body
+{
+background-repeat:no-repeat;
+background-position:right bottom;
+}-->
+</style>
+	<title>ACEDAutomation</title>
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+	</head>
+		<body bgcolor="#E6E6E6">
+			<table  border="0" height="125" width="1200"background="images/top.jpg">
+				<colgroup>
+					<col>
+				</colgroup>	
+				<tbody>
+					<tr>
+						<td class="centeralign">
+							<b>
+								<h2  align="right" >
+									<font color="#E6E6E6">
+										Hi {{currentUser}}!<br/> <a href="/register" target="_blank" class="nounderline" ><b><font color="#E6E6E6" size="3">Class Registration Form</font></b></a>
+									</font>
+								</h2>
+							</b>
+						</td>
+					</tr>
+
+			</table>
+			
+			
+    <!--menu table-->
+			<table bgcolor="#b70001" border="0" width="1200">
+				<colgroup>
+					<col width="1100"> 
+					<col width="1100"> 
+					<col width="1000"> 
+					<col width="180"> 
+					<col width="180"> 
+				</colgroup>
+					<tbody>
+						<tr>
+							<td class="centeralign">
+									<div class="/menuOptions"> 
+										<a href="/menuOptions?campus={{campus}}&semester={{semester}}"><b> <h2><font color="#E6E6E6">Home</font></h2></b></a>
+									</div>
+							</td>
+							<td class="centeralign">
+									<div class="/login"> 
+										<h2>{{campus}}/{{semester}}<a href="/login"><b><font color="#E6E6E6">Change</font></h2></b></a>
+									</div>
+							</td>
+							<td class="centeralign">
+									<div class="logout"> 
+										<a href="/logout" class="nounderline" ><b><h2><font color="#E6E6E6">Log out</font></h2></b></a>
+									</div>
+							</td>
+						</tr>	
+					</tbody>
+			</table>
+	
+	
+<!--============================================================================================================================-->
+
+		<div style="float">	
+			<font color="#ffffff" >
+				<table style="float:left" colspan="3"  border="0">
+					<colgroup>
+						<col width="200" height="100">
+					</colgroup>
+					<tbody >
+						<tr>
+							<td colspan="3"  style=" background:url('images/botton.jpg')no-repeat">
+								<a href="JavaScript://" onClick="toggleDisplay(toggledDisplay['students'], 'students')"> <h2 align="center">Students</h2> </a>
+							</td>
+						</tr>
+						
+						<tr id="students" bgcolor="#b70000">
+							<td colspan="3">
+								<table>
+									<tbody>
+					
+										<tr>
+											{% if admin %}
+												<td>
+													<div class="newstudentregisterations">
+														<a style="color: #E6E6E6"  target="iframe_a" href= /newStudentRegistrations><h4>New Student Registrations for {{semester}} (All Campuses)</h4></a>
+													</div>
+												</td>
+											{% endif %}
+										</tr>
+											
+										<tr>
+											<td>
+												<div class="studentinformationgrid">
+													<a style="color: #E6E6E6" target="iframe_a" href=/studentInformationGrid><b><h4>Student Information Grid for {{campus}}/{{semester}}</h4></b></a>
+												</div>
+											</td>
+										</tr>
+
+
+										<tr>
+											<td>
+												<div class = "attendanceroster"> 
+													<a style="color:#E6E6E6" target="iframe_a" href=/studentCheckin><b><h4>Student Check-in for {{campus}}/{{semester}}</h4></b></a>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div class="classroster"> 
+													<a style="color: #E6E6E6"  target="iframe_a" href=/classList><b><h4>Class Rosters for {{campus}}/{{semester}}</h4></b></a>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div class="trackinggrid"> 
+													<a style="color: #E6E6E6" target="iframe_a" href=/trackingGrid target="iframe_a"><h4>Tracking Grid for {{campus}}/{{semester}}</h4></a>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div class="nametags"> 
+													<a style="color: #E6E6E6" href=/nametags target="_blank"><h4>Nametags for {{campus}}/{{semester}}</h4></a>
+												</div>
+											</td>
+										</tr>
+                                        {% if admin %}
+										<tr>
+											<td>
+												<div class="deniedstudentslist"> 
+													<a style="color: #E6E6E6"  target="iframe_a" href=/deniedStudents><b><h4>Denied Students List for {{semester}} (All Campuses)</h4></b></a>
+												</div>
+											</td>
+										</tr>
+					                    {% endif %}
+									</tbody>
+								</table>
+							</td>
+						</tr>
+						
+          
+		  {% if admin%}
+		  <tr>
+            <td colspan="3" style=" background:url('images/botton.jpg')no-repeat"><a href="JavaScript://"
+                onclick="toggleDisplay(toggledDisplay['administration'],
+                'administration')">
+                <h2 align="center">Administration</h2>
+              </a></td>
+          </tr>
+          <tr id="administration">
+            <td colspan="3" bgcolor="#b70000">
+              <table>
+                <colgroup><col width="200"> </colgroup><tbody>
+                  <tr>
+                    <td>
+						<div class="websiteresgistrationedit"> 
+							<a style="color: #E6E6E6" target="iframe_a" href=/websiteRegistrationEdit>
+								<b> <h4>Online Registration Edit</h4></b>
+							</a> 
+						</div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+						<div class="changepassword"> 
+							<a style="color: #E6E6E6" target="iframe_a" href=/changePassword>
+							<b><h4>Change Passwords</h4></b>
+							</a> 
+						</div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+						<div class="addsemester"> 
+							<a style="color: #E6E6E6" href=/addSemester target="iframe_a">
+								<b><h4> Add Semester </h4></b>
+							</a> 
+						</div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+						<div class="addsemester">
+							<a style="color: #E6E6E6" href=/addClass target="iframe_a">
+								<b><h4> Add Class </h4></b>
+							</a>
+						</div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </td>
+          </tr>
+		  {% endif %}
+        </tbody>
+      </table>
+    </font>
+
+<iframe style="float:left" width="75%" height="100%" name="iframe_a" frameborder="0" src="/welcomepage"></iframe>
+</div>	
+	
+	
+    <script language="JavaScript" type="text/javascript">
+  <!--
+    toggleDisplay(false, 'students', 'staff', 'administration', 'sub4', 'sub5', 'sub6', 'sub7');
+    toggleDisplay(true, 'toggleAll');
+  //-->
+  </script>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<html>
+	<head>
+		<title>
+		{{semester}} Denied Students
+		</title>
+        <link rel="stylesheet" type="text/css" href="resources/acedautomationstyle.css" />
+        <link rel="icon" type="image/png" href="images/favicon.png" />
+	</head>
+	<body>
+        <div class="heading">Denied students for {{semester}}</div>
+        {% if not studentsList %}
+        <p>There is nothing to show here.</p>
+        {% else %}
+        Before you delete a student, please note down his/her personal information and enrollment data.
+		<table border="1" width="100%" cellspacing="0" cellpadding="7">
+            {% for student in studentsList.items %}
+				<tr>
+					<td width="80%">
+						<p>Student name: <a href="/studentInformation?ID={{student.0}}">{{student.1}}</a></p>
+					</td>
+					<td>
+							<a href="/deniedStudents?accept={{student.0}}"><INPUT TYPE="submit" VALUE="Accept" style="height: 25px; width: 100px"></a>
+                        &nbsp;
+							<a href="/deniedStudents?delete={{student.0}}"><INPUT TYPE="submit" VALUE="Delete" style="height: 25px; width: 100px"></a>
+					</td>
+				</tr>
+            {% endfor %}
+		</table>
+        <div class="Footer">Click on the student names to see more information.</div>
+        {% endif %}
+	</body>
+</html> 
+<html>

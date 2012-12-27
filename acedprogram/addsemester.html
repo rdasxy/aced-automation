@@ -1,0 +1,257 @@
+<html>
+	<head>
+    	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" x-undefined="" />
+		<title>Add A Semester</title>
+        <link rel="icon" type="image/png" href="images/favicon.png" />
+		<link href="resources/acedautomationstyle.css" rel="stylesheet" type="text/css" />       
+	</head>
+	<body>
+		<div class = "selectsemester">
+			<p><h1>Add Semester</h1>
+            <font color="red">Please do this carefully. You can't edit the semester once it's been added.</font>
+		</div>
+		<form action="/addSemester" method = "POST">
+			<table>
+				<tr>
+					<td width=5%>
+						Select Session :
+					</td>
+					<td>
+						<select name="semester">
+							<option value="Spring">Spring</option>
+							<option value="Fall">Fall</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						Year:
+					</td>
+					<td>
+						<input type="text" name="year" />
+					</td>
+				</tr>
+				<tr>
+					<td>
+						*Class Days:
+					</td>
+					<td>
+						<input type="text" name="meetingDays"/>
+					</td>
+				</tr>
+                <tr>
+                    <td colspan=2>
+                        *For class days, please enter a comma separated list of all the days the semester meets. Do not add spaces and make sure there's no comma at the end.<br/>
+                        e.g. "10/23,10/30,11/06,11/13,11/20,12/04"
+                    </td>
+					<td>
+						&nbsp;
+					</td>
+				</tr>
+			</table>
+            <h2>Class Schedule notes for UMKC</h2>
+            <table border="1" width="100%" cellspacing="0" cellpadding="7">
+				<tr>
+					<td bgcolor="#d7ebe2" size="100%" width="28%">
+						Class Begin Notes (UMKC)
+					</td>
+					<td>
+						<input type="text" name="classBeginNotesUMKC" size="100%" value="{{classBeginNotes}}"/>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#d7ebe2">
+						Class End Notes (UMKC)
+					</td>
+					<td>
+						<input type="text" name="classEndNotesUMKC" size="100%" value="{{classEndNotes}}"/>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#d7ebe2">
+						Arrival Notes (UMKC)
+					</td>
+					<td>
+						<input type="text" name="arrivalNotesUMKC" size="100%" value="{{arrivalNotes}}"/>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#d7ebe2">
+						Attendance Policy (UMKC)
+					</td>
+					<td>
+						<input type="text" name="attendancePolicyUMKC" size="100%" value="{{attendancePolicy}}"/>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#d7ebe2">
+						Location (UMKC)
+					</td>
+					<td>
+						<input type="text" name="locationUMKC" size="100%" value="{{location}}"/>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#d7ebe2">
+					Directions (UMKC)
+					</td>
+					<td>
+						<input type="text" name="directionUMKC" size="100%" value="{{direction}}"/>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#d7ebe2">
+						Building (UMKC)
+					</td>
+					<td>
+						<input type="text" name="buildingUMKC" size="100%" value="{{building}}"/>
+					</td>
+				</tr>
+                <tr>
+					<td bgcolor="#d7ebe2">
+						Problem Notice (UMKC)
+					</td>
+					<td>
+						<input type="text" name="problemNoticeUMKC" size="100%" value="{{problemNotice}}"/>
+					</td>
+				</tr>
+			</table>
+            <h2>Class Schedule notes for Longview</h2>
+            <table border="1" width="100%" cellspacing="0" cellpadding="7">
+				<tr>
+					<td bgcolor="#d7ebe2" size="100%" width="28%">
+						Class Begin Notes (Longview)
+					</td>
+					<td>
+						<input type="text" name="classBeginNotesLongview" size="100%" value="{{classBeginNotes}}"/>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#d7ebe2">
+						Class End Notes (Longview)
+					</td>
+					<td>
+						<input type="text" name="classEndNotesLongview" size="100%" value="{{classEndNotes}}"/>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#d7ebe2">
+						Arrival Notes (Longview)
+					</td>
+					<td>
+						<input type="text" name="arrivalNotesLongview" size="100%" value="{{arrivalNotes}}"/>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#d7ebe2">
+						Attendance Policy (Longview)
+					</td>
+					<td>
+						<input type="text" name="attendancePolicyLongview" size="100%" value="{{attendancePolicy}}"/>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#d7ebe2">
+						Location (Longview)
+					</td>
+					<td>
+						<input type="text" name="locationLongview" size="100%" value="{{location}}"/>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#d7ebe2">
+					    Directions (Longview)
+					</td>
+					<td>
+						<input type="text" name="directionLongview" size="100%" value="{{direction}}"/>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#d7ebe2">
+						Building (Longview)
+					</td>
+					<td>
+						<input type="text" name="buildingLongview" size="100%" value="{{building}}"/>
+					</td>
+				</tr>
+                <tr>
+					<td bgcolor="#d7ebe2">
+						Problem Notice (Longview)
+					</td>
+					<td>
+						<input type="text" name="problemNoticeLongview" size="100%" value="{{problemNotice}}"/>
+					</td>
+				</tr>
+			</table>
+            <h2>Class Schedule notes for Blue River</h2>
+            <table border="1" width="100%" cellspacing="0" cellpadding="7">
+				<tr>
+					<td bgcolor="#d7ebe2" size="100%" width="28%">
+						Class Begin Notes (Blue River)
+					</td>
+					<td>
+						<input type="text" name="classBeginNotesBR" size="100%" value="{{classBeginNotes}}"/>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#d7ebe2">
+						Class End Notes (Blue River)
+					</td>
+					<td>
+						<input type="text" name="classEndNotesBR" size="100%" value="{{classEndNotes}}"/>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#d7ebe2">
+						Arrival Notes (Blue River)
+					</td>
+					<td>
+						<input type="text" name="arrivalNotesBR" size="100%" value="{{arrivalNotes}}"/>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#d7ebe2">
+						Attendance Policy (Blue River)
+					</td>
+					<td>
+						<input type="text" name="attendancePolicyBR" size="100%" value="{{attendancePolicy}}"/>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#d7ebe2">
+						Location (Blue River)
+					</td>
+					<td>
+						<input type="text" name="locationBR" size="100%" value="{{location}}"/>
+					</td>
+				</tr>
+				<tr>
+					<td bgcolor="#d7ebe2">
+					    Directions (Blue River)
+					</td>
+					<td>
+						<input type="text" name="directionBR" size="100%" value="{{direction}}"/>
+					</td>
+				</tr>
+                <tr>
+					<td bgcolor="#d7ebe2">
+						Building (Blue River)
+					</td>
+					<td>
+						<input type="text" name="buildingBR" size="100%" value="{{building}}"/>
+					</td>
+				</tr>
+                <tr>
+					<td bgcolor="#d7ebe2">
+						Problem Notice (Blue River)
+					</td>
+					<td>
+						<input type="text" name="problemNoticeBR" size="100%" value="{{problemNotice}}"/>
+					</td>
+				</tr>
+			</table>
+            <br/><br/><center><input type="submit" value="Submit" style="height: 25px; width: 100px"/></center>
+		</form>
+		
+	</body>
+</html> 

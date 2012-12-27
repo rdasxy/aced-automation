@@ -1,0 +1,64 @@
+<html>
+	<head>
+    	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" x-undefined="" />
+		<title>Edit Website Registration</title>
+        <link rel="icon" type="image/png" href="images/favicon.png" />
+		<link href="resources/acedautomationstyle.css" rel="stylesheet" type="text/css" />
+	</head>
+	<body>
+		<div class = "websiteregistrationedit">
+			<p><h1>Website Registration Edit</h1>
+            <font color="red">Warning: Please edit this only after a semester is over.</font>
+		</div>
+		<form action="/websiteRegistrationEdit" method = "POST">
+			<table>
+				<tr>
+					<td>
+						Current Semester :
+					</td>
+					<td>
+						<select name="semester">
+							<option value="Spring">Spring</option>
+							<option value="Fall">Fall</option>
+						</select>
+                        <select name="year">
+                            {% for year in years %}
+							<option>{{year}}</option>
+                            {% endfor %}
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						UMKC Contact Name:
+					</td>
+					<td>
+						<input type="text" name="UMKCcontact" value="{{umkcname}}"/>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						LV Contact Name:
+					</td>
+					<td>
+						<input type="text" name="LVcontact"  value="{{lvname}}"/>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						BR Contaect Name:
+					</td>
+					<td>
+						<input type="text" name="BRcontact"  value="{{brname}}"/>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<input type="submit" value="Submit" style="height: 25px; width: 100px"/>
+					</td>
+				</tr>
+			</table>
+		</form>
+		
+	</body>
+</html> 

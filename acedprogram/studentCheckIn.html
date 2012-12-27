@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+	<title>Student Check In</title>
+	<link href="resources/StyleSheet.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+    <style type="text/css">
+        table.sample {
+            border-width: 1px;
+            border-spacing: 0px;
+            border-style: ridge;
+            border-color: gray;
+            border-collapse: separate;
+            background-color: white;
+        }
+        table.sample th {
+            border-width: 1px;
+            padding: 3px;
+            border-style: dotted;
+            border-color: gray;
+            background-color: white;
+            -moz-border-radius: ;
+        }
+        table.sample td {
+            border-width: 1px;
+            padding: 3px;
+            border-style: dotted;
+            border-color: gray;
+            background-color: rgb(255, 255, 240);
+            -moz-border-radius: ;
+        }
+        </style>
+</head>
+<body>
+	<INPUT TYPE="BUTTON" VALUE="Print View" ONCLICK="window.open('/studentCheckin');">
+	<div align="center">
+		<b><h2>STUDENT CHECK-IN</h2></b>
+		<b>{{campus}} {{ semesterName }}</b>
+        <font color=red><h3>Please remember to save!</h3></font>
+	</div>
+	<div>
+
+        <form action="/studentCheckin" method="POST">
+            <center><input type=submit value="SAVE"/></center><br/>
+            <table class="sample" cellpadding="0" cellspacing="0" width="100%">
+                <tr class="sample">
+                    <th><b><center>NO.</center></b></th>
+                    <th colspan="1"><b>NAME</b></th>
+                    {% for semesterDay in semesterDaysList %}
+                    <th colspan="2"><b>{{ semesterDay }}</b></th>
+                    {% endfor %}
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    {% for day in semesterDaysList %}
+                    <td><b><center>IN</center></b></td>
+                    <td><b><center>OUT</center></b></td>
+                    {% endfor %}
+                </tr>
+                {% for attendanceData in attendanceByStudent.items %}
+                <tr>
+
+                    <td width="5%"><center>{{ forloop.counter }}</center></td>
+                    <td>{{ attendanceData.0 }}</td>
+                    {% for attendance in attendanceData.1 %}
+                    <td><center>{{ attendance }}</center></td>
+                    <!--<td>{{ attendance.1 }}</td>-->
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </table><br/>
+            <center><input type=submit value="SAVE"/></center><br/>
+        </form>
+	</div>
+</body>
+</html>

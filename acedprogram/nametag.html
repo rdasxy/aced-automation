@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+	<title>ACEDAutomation NameTags</title>
+	<link href="resources/StyleSheet.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+    <STYLE TYPE="text/css">
+     p.jasonsmagic {page-break-before: always}
+</STYLE> 
+</head>
+
+<body>
+	{% for output in nametagOutput %}
+	<table class="nameTagTable" width="100%" cellpadding="0" cellspacing="0">
+		<tr>
+
+			<td width="49%" height="30%" class="nameTagTable-td-left">
+				<div id="contentHolders">
+					<table cellpadding="0" cellspacing="0" style="width:100%;">
+						<tr>
+							<td width="30%"><img src="images/ACEDlogoShadow.png" width="100%" /></td>
+							<td id="nameText" align="left" valign="bottom">&nbsp;<b>{{output.0}}</b></td>
+						</tr>
+						<tr>
+							<td colspan="2">
+								<div id="contentHolders">
+									<div id="ACEDtext" align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>ACED Program</b></div>
+                                    {% for class in output.2 %}
+                                    <div id="classText" align="center"> {{class}} </div><br />
+                                    {% endfor %}
+								</div>
+							</td>
+						</tr>
+					</table>
+                </div>
+			</td>
+			<td width="2%">&nbsp;</td>
+			<td width="49%" class="nameTagTable-td-right">
+				<div id="contentHolders">
+					<table cellpadding="0" cellspacing="0" style="width:100%;">
+						<tr>
+							<td width="30%"><img src="images/ACEDlogoShadow.png" width="100%" /></td>
+							<td id="nameText" align="left" valign="bottom">&nbsp;<b>{{output.1}}</b></td>
+						</tr>
+						<tr>
+							<td colspan="2">
+								<div id="contentHolders">
+									<div id="ACEDtext" align="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b>ACED Program</b></div>
+                                    {% for class in output.3 %}
+                                    <div id="classText" align="center"> {{ class }}</div><br />
+                                    {% endfor %}
+								</div>
+							</td>
+						</tr>
+					</table>
+                </div>
+            </td>
+		</tr>
+		<tr>
+			<td height="5%" class="nameTageTable-td-bottomBorder" colspan="3">&nbsp;</td>
+		</tr>
+    </table>
+{% if output.4 %}
+<p CLASS="jasonsmagic">
+{% endif %}
+{% endfor %}
+</body>
+
+</html>
